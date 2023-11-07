@@ -1,15 +1,31 @@
 /*
 Utilizando il codice javascript precedente, e apportando migliorie ove necessario, andiamo a creare un form per il calcolo del prezzo del biglietto del treno.
+*/
 
 "use strict";
-/*
-Effettuare dei prompt che chiedano all'utente:
-1) Numero di chilometri da percorrere.
-2) Età del passeggero.
-Entrambe saranno da inserire all'interno di delle variabili. */
 
-const km = parseInt(prompt("Inserire il numero di km da percorrere."));
 
+const generateButton = document.getElementById('generate')
+
+generateButton.addEventListener('click', function () {
+    const km = document.getElementById('km-number').value;
+    console.log(km);
+    var prezzoBiglietto = km * 0.21;
+    if (document.getElementById('eta').value === "Minorenne") {
+        prezzoBiglietto = prezzoBiglietto * 0.8;
+        console.log('Il tuo biglietto scontato per minorenni costa: ', prezzoBiglietto.toFixed(2));
+    }
+
+    else if (document.getElementById('eta').value === "Over 65") {
+        prezzoBiglietto = prezzoBiglietto * 0.6;
+        console.log('Il tuo biglietto scontato per over 65 costa: ', prezzoBiglietto.toFixed(2));
+    }
+    else {
+        console.log('Il tuo biglietto costa: ', prezzoBiglietto.toFixed(2));
+    }
+})
+
+/* 
 if (isNaN(km)) { // verificare che sia un numero
     alert("Inserire un numero! Ricaricare la pagina");
 }
@@ -25,15 +41,15 @@ if (isNaN(etaUtente)) { // verificare che sia un numero
 console.log(etaUtente);
 
 
-/*
+
 ### Calcolo prezzo
 
-Definire un a variabile che calcoli il prezzo del biglietto moltiplicando i km inseriti dall'utente per il prezzo al km (0,21€).*/
+Definire un a variabile che calcoli il prezzo del biglietto moltiplicando i km inseriti dall'utente per il prezzo al km (0,21€).
 
 var prezzoBiglietto = km * 0.21;
 console.log(prezzoBiglietto + '€');
 
-/*
+
 ### Funzione sconto
 
 In una fuzione calcolare il prezzo aggiornato del biglietto a seconda dell'età nel seguente modo:
@@ -41,7 +57,7 @@ In una fuzione calcolare il prezzo aggiornato del biglietto a seconda dell'età 
     - allora il prezzo è scontato del 20%.
 - Se l'età e maggiore o uguale a 65
     - allora il prezo scontato è del 40%.
-- Altrimenti non viene effettuato nessuno sconto.*/
+- Altrimenti non viene effettuato nessuno sconto.
 
 if (etaUtente < 18) { //caso minorenne
     prezzoBiglietto = prezzoBiglietto * 0.8;
@@ -54,7 +70,8 @@ else if (etaUtente >= 65) { //caso over 65
 else {
     console.log('Il tuo biglietto costa: ', prezzoBiglietto.toFixed(2));
 }
-/*
+
+
 Indicare il prezzo finale con al massimo due numeri decimali. 
 
 MILESTONE 1:
@@ -78,6 +95,4 @@ Creiamo e stilizziamo il form aggiungendo:
 
 3) un bottone annulla
 
-Al click del bottone genera il div contenente il biglietto dovrà divenatre visibile, ed al click di annulla riprendere il suo display none.
-* /
-
+Al click del bottone genera il div contenente il biglietto dovrà divenatre visibile, ed al click di annulla riprendere il suo display none.*/
