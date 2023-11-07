@@ -1,8 +1,22 @@
 body {
     background-color: #b91547;
+    font-family: 'Roboto', sans-serif;
 }
 
 .dr-calcolator p,
 .dr-calcolator button {
     color: #b91547;
+}
+
+.dr-calcolator input,
+.dr-calcolator select {
+    border-color: #b91547;
+}
+
+.dr-calcolator button {
+    margin-top: 2.1875rem;
+}
+
+#dr-biglietto h6 {
+    margin-bottom: 1.875rem;
 }

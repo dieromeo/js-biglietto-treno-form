@@ -8,6 +8,11 @@
     <!-- bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- font roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
     <!-- link css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -15,63 +20,64 @@
 <body>
     <div class="container">
         <section class="dr-calcolator text-center">
-            <h2 class="text-light my-2 text-uppercase">Calcola il prezzo del tuo biglietto</h2>
-            <div class="row bg-light p-4 rounded">
+            <h2 class="text-light my-3 text-uppercase fw-bolder">Calcola il prezzo del tuo biglietto</h2>
+            <div class="row bg-light p-4 rounded m-0">
                 <div class="row justify-content-center">
                     <div class="col-3">
-                        <p>Nome e Cognome</p>
-                        <input type="text" placeholder="Nome e Cognome" id="nome-utente">
+                        <p class="fw-bold">Nome e Cognome</p>
+                        <input type="text" placeholder="Nome e Cognome" id="nome-utente" class="rounded text-center">
                     </div>
                     <div class="col-3">
-                        <p>Km da percorrere</p>
-                        <input type="number" name="km" id="km-number" placeholder="Numero di km">
+                        <p class="fw-bold">Km da percorrere</p>
+                        <input type="number" name="km" id="km-number" placeholder="Numero di km"
+                            class="rounded text-center">
                     </div>
                     <div class="col-3">
-                        <p>Fascia di età</p>
-                        <select name="età" id="eta">
+                        <p class="fw-bold">Fascia di età</p>
+                        <select name="età" id="eta" class="rounded text-center">
                             <option value="Minorenne">Minorenne</option>
                             <option value="Maggiorenne">Maggiorenne</option>
                             <option value="Over 65">Over 65</option>
                         </select>
                     </div>
                 </div>
-                <div class="row justify-content-center mt-3">
+                <div class="row justify-content-center">
                     <div class="col-1">
-                        <button id="generate">Generate</button>
+                        <button id="generate" class="btn fw-bold bg-secondary">Genera</button>
                     </div>
                     <div class="col-1">
-                        <button id="Annulla">Annulla</button>
+                        <button id="Annulla" class="btn fw-bold bg-secondary">Annulla</button>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="dr-biglietto" class="d-none"> <!-- sezione del biglietto -->
-            <h2 class="text-light my-2 text-uppercase text-center">il tuo biglietto</h2>
-            <div class="bg-light">
-                <h4 class="text-uppercase">Dettaglio passeggeri</h4>
+            <h2 class="text-light mt-3 text-uppercase text-center fw-bolder">il tuo biglietto</h2>
+            <div class="bg-light p-3">
+                <h5 class="text-uppercase fw-bolder">Dettaglio passeggeri</h5>
                 <div class="row m-0">
-                    <div class="col-3 bg-secondary">
-                        <h5 class="text-uppercase">Nome passeggero</h5>
-                        <p id="passeggero-output"></p>
+                    <div class="col-3 bg-secondary p-3">
+                        <h5 class="text-uppercase fw-bolder">Nome passeggero</h5>
+                        <p id="passeggero-output" class="fw-bolder"></p>
                     </div>
                     <div class="col">
-                        <div class="row">
+                        <div class="row p-3 border-bottom border-top border-2 border-secondary">
                             <div class="col-3">
-                                <h5>Offerta</h5>
-                                <p>Offerta standard</p>
+                                <h6 class="fw-bolder">Offerta</h6>
+                                <p id="offerta" class="m-0"></p>
                             </div>
                             <div class="col-3">
-                                <h5>Carrozza</h5>
-                                <p id="carrozza"></p>
+                                <h6 class="fw-bolder">Carrozza</h6>
+                                <p id="carrozza" class="m-0"></p>
                             </div>
                             <div class="col-3">
-                                <h5>Codice CP</h5>
-                                <p id="codice-cp"></p>
+                                <h6 class="fw-bolder">Codice CP</h6>
+                                <p id="codice-cp" class="m-0"></p>
                             </div>
                             <div class="col-3">
-                                <h5>Costo biglietto</h5>
-                                <p id="prezzo"></p>
+                                <h6 class="fw-bolder">Costo biglietto</h6>
+                                <p id="prezzo" class="m-0"></p>
                             </div>
                         </div>
                     </div>
