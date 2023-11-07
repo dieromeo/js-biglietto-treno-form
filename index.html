@@ -5,20 +5,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Form biglietto del treno</title>
+    <!-- bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- link css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div class="price-calcolator">
-        <h1>Titolo</h1>
-        <input type="number" name="km" id="km-number">
-        <select name="età" id="eta">
-            <option value="Minorenne">Minorenne</option>
-            <option value="Maggiorenne">Maggiorenne</option>
-            <option value="Over 65">Over 65</option>
-        </select>
-        <button id="generate">Generate</button>
+    <div class="container">
+        <section class="dr-calcolator text-center">
+            <h2 class="text-light my-2 text-uppercase">Calcola il prezzo del tuo biglietto</h2>
+            <div class="row bg-light p-4 rounded">
+                <div class="row justify-content-center">
+                    <div class="col-3">
+                        <p>Nome e Cognome</p>
+                        <input type="text" placeholder="Nome e Cognome" id="nome-utente">
+                    </div>
+                    <div class="col-3">
+                        <p>Km da percorrere</p>
+                        <input type="number" name="km" id="km-number" placeholder="Numero di km">
+                    </div>
+                    <div class="col-3">
+                        <p>Fascia di età</p>
+                        <select name="età" id="eta">
+                            <option value="Minorenne">Minorenne</option>
+                            <option value="Maggiorenne">Maggiorenne</option>
+                            <option value="Over 65">Over 65</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-3">
+                    <div class="col-1">
+                        <button id="generate">Generate</button>
+                    </div>
+                    <div class="col-1">
+                        <button id="Annulla">Annulla</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dr-biglietto" class="d-none"> <!-- sezione del biglietto -->
+            <h2 class="text-light my-2 text-uppercase text-center">il tuo biglietto</h2>
+            <div class="bg-light">
+                <h4 class="text-uppercase">Dettaglio passeggeri</h4>
+                <div class="row m-0">
+                    <div class="col-3 bg-secondary">
+                        <h5 class="text-uppercase">Nome passeggero</h5>
+                        <p id="passeggero-output"></p>
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col-3">Offerta</div>
+                            <div class="col-3">carrozza</div>
+                            <div class="col-3">codice</div>
+                            <div class="col-3">costo biglietto</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
     <!-- collegamento javascript -->
     <script src="JS/main.js"></script>
