@@ -4,17 +4,15 @@ Utilizando il codice javascript precedente, e apportando migliorie ove necessari
 
 "use strict";
 
-
+const km = document.getElementById('km-number'); // numero di km
 const generateButton = document.getElementById('generate') // bottone per generare il biglietto
 const annullaButton = document.getElementById('Annulla') // bottone per annullare il biglietto
 let sectionBiglietto = document.getElementById('dr-biglietto'); // sezione che deve comparire al click
-
+const nomeUtente = document.getElementById('nome-utente'); // aggiunta nome utente
 
 generateButton.addEventListener('click', function () {
-    const km = document.getElementById('km-number').value; // numero di km
 
-    const nomeUtente = document.getElementById('nome-utente').value; // aggiunta nome utente
-    document.getElementById('passeggero-output').innerHTML = nomeUtente;
+    document.getElementById('passeggero-output').innerHTML = nomeUtente.value;
 
     const carrozza = Math.floor(Math.random() * 14 + 1); // aggiunta numero carrozza
     document.getElementById('carrozza').innerHTML = carrozza;
@@ -22,7 +20,7 @@ generateButton.addEventListener('click', function () {
     const codiceCp = Math.floor(Math.random() * 100000); // aggiunta codice biglietto
     document.getElementById('codice-cp').innerHTML = codiceCp;
 
-    let prezzoBiglietto = km * 0.21;
+    let prezzoBiglietto = km.value * 0.21;
     if (document.getElementById('eta').value === "Minorenne") { //caso minorenne
         prezzoBiglietto = prezzoBiglietto * 0.8;
         console.log('Il tuo biglietto scontato per minorenni costa: ', prezzoBiglietto);
@@ -46,4 +44,6 @@ generateButton.addEventListener('click', function () {
 
 annullaButton.addEventListener('click', function () {
     sectionBiglietto.classList.add('d-none');
+    km.value = '';
+    nomeUtente.value = '';
 })
